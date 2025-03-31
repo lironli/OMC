@@ -1,0 +1,18 @@
+<div class="page-container">
+  <div class="actions-wrapper">
+    <button (click)="onRefreshSensorsMailFunctionReport()" class="refresh-btn">Refresh Malfunction report data</button>
+    <button (click)="onRefreshAverageTemperaturePerHourReport()" class="refresh-btn">Refresh Average Temperature Per Hour Report data</button>
+  </div>
+  <div class="tabs">
+    <div class="tab-headers">
+      <div class="tab-item" [ngClass]="{'selected': selectedTab === 1}" (click)="onSelectedTab(1)">Malfunction Sensor Report</div>
+      <div class="tab-item" [ngClass]="{'selected': selectedTab === 2}"  (click)="onSelectedTab(2)">Aggregated Temperature</div>
+    </div>
+    <div class="tab-content" *ngIf="selectedTab === 1">
+      <app-sensors-mail-function-report></app-sensors-mail-function-report>
+    </div>
+    <div class="tab-content" *ngIf="selectedTab === 2">
+      <app-average-temperature-per-hour-report></app-average-temperature-per-hour-report>
+    </div>
+  </div>
+</div>

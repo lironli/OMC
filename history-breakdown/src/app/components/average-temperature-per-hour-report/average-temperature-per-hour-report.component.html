@@ -1,0 +1,16 @@
+<div class="sensor-history-container">
+  <table>
+    <thead>
+    <tr>
+      <th *ngFor="let sensor of (reportData | async)?.columns">
+        {{sensor}}
+      </th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let sensor of (reportData | async)?.data">
+      <td>{{ sensor.processingHour }}</td>
+      <td>{{ sensor.averageTemperature }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
